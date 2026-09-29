@@ -1,0 +1,35 @@
+Sugarcane dataset attribution and license notice
+
+The analysis-facing tables in this directory are adapted from the public dataset:
+
+Gilles Chaix, Ryad Bendoula, and Abdallah Zgouz,
+"Data set of Visible-Near Infrared handled and micro-spectrometers - comparison of their accuracy
+for predicting some sugarcane properties," Mendeley Data, Version 1 (2021).
+https://doi.org/10.17632/mjttsjfj2s.1
+
+Related publication:
+
+Abdallah Zgouz et al., "Dataset of visible-near infrared handheld and micro-spectrometers -
+comparison of the prediction accuracy of sugarcane properties," Data in Brief 31 (2020), 106013.
+https://doi.org/10.1016/j.dib.2020.106013
+
+Mendeley Data identifies the dataset license as Creative Commons Attribution 4.0 International
+(CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Under CC BY 4.0, the data may be shared and adapted for any purpose provided appropriate credit is
+given, a link to the license is supplied, and modifications are indicated.
+
+Changes made for this repository:
+
+- selected the LabSpec instrument table as the predictor source;
+- parsed TS, CP, ADF, and IVOMD as responses;
+- excluded source samples 103, 105, and 111 because TS is missing;
+- aligned retained rows one-to-one using the public Sample identifier;
+- retained wavelengths from 780 through 2500 nm inclusive;
+- removed Sample identifiers from the numeric model matrices;
+- wrote the aligned values as comma-delimited X.csv and Y.csv;
+- added public metadata and integrity hashes.
+
+No imputation, smoothing, derivative, scatter correction, centering, scaling, or other spectral
+preprocessing was applied. No endorsement by the original authors or repository is implied.

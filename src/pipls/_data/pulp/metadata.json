@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "dataset": {
+    "id": "pulp",
+    "title": "Thermomechanical pulp fiber-property regression dataset",
+    "version": "1",
+    "summary": "Forty-six thermomechanical-pulp samples with 14 fiber-description predictors and eight responses comprising Canadian Standard Freeness and handsheet properties."
+  },
+  "dimensions": {
+    "n_samples": 46,
+    "n_features": 14,
+    "n_targets": 8
+  },
+  "feature_names": [
+    "Shives",
+    "Fines B",
+    "L (arith)",
+    "L (lw)",
+    "L (llw)",
+    "W (arith)",
+    "W (lw)",
+    "W (llw)",
+    "C (arith)",
+    "C (lw)",
+    "C (llw)",
+    "F (arith)",
+    "F (lw)",
+    "F (llw)"
+  ],
+  "target_names": [
+    "CSF",
+    "Density",
+    "TI",
+    "Elongation",
+    "TEA",
+    "TSI",
+    "Tear index",
+    "s"
+  ],
+  "variables": {
+    "predictors": [
+      {"name": "Shives", "description": "Shives-category measurement from the Pulp Expert analyzer; source units retained."},
+      {"name": "Fines B", "description": "High-aspect-ratio Fines B particle measurement; source units retained."},
+      {"name": "L (arith)", "description": "Arithmetic mean of the measured particle contour length L."},
+      {"name": "L (lw)", "description": "Length-weighted mean of the measured particle contour length L."},
+      {"name": "L (llw)", "description": "Length-length-weighted mean of the measured particle contour length L."},
+      {"name": "W (arith)", "description": "Arithmetic mean of the measured particle width W."},
+      {"name": "W (lw)", "description": "Length-weighted mean of the measured particle width W."},
+      {"name": "W (llw)", "description": "Length-length-weighted mean of the measured particle width W."},
+      {"name": "C (arith)", "description": "Arithmetic mean of the measured particle curl C."},
+      {"name": "C (lw)", "description": "Length-weighted mean of the measured particle curl C."},
+      {"name": "C (llw)", "description": "Length-length-weighted mean of the measured particle curl C."},
+      {"name": "F (arith)", "description": "Arithmetic mean of the measured fibrillation descriptor F."},
+      {"name": "F (lw)", "description": "Length-weighted mean of the measured fibrillation descriptor F."},
+      {"name": "F (llw)", "description": "Length-length-weighted mean of the measured fibrillation descriptor F."}
+    ],
+    "responses": [
+      {"name": "CSF", "description": "Canadian Standard Freeness measurement."},
+      {"name": "Density", "description": "Laboratory handsheet density measurement."},
+      {"name": "TI", "description": "Laboratory handsheet tensile-index measurement."},
+      {"name": "Elongation", "description": "Laboratory handsheet elongation-at-break measurement."},
+      {"name": "TEA", "description": "Laboratory handsheet tensile-energy-absorption measurement."},
+      {"name": "TSI", "description": "Laboratory handsheet tensile-stiffness-index measurement."},
+      {"name": "Tear index", "description": "Laboratory handsheet tear-index measurement."},
+      {"name": "s", "description": "Laboratory handsheet light-scattering coefficient."}
+    ]
+  },
+  "sample_alignment": {
+    "method": "positional",
+    "description": "Row i in X.csv and row i in Y.csv refer to the same pulp sample. The source supplementary table stores all variables on one row, so selecting and splitting columns preserves alignment."
+  },
+  "missing_values": {
+    "predictors": "none",
+    "responses": "none"
+  },
+  "provenance": {
+    "source": "Supplementary material for doi:10.1016/j.compchemeng.2025.109143",
+    "license": "CC-BY-4.0",
+    "citation": "Lindström, S. B., Ferritsius, R., Carlson, J. E., Persson, J., and Nilsson, F. (2025). Predicting handsheet properties and enhancing refiner control using fiber analyzer data and latent variable modeling. Computers & Chemical Engineering, 199, 109143.",
+    "version": "1"
+  },
+  "source": {
+    "type": "publication-supplement",
+    "doi": "10.1016/j.compchemeng.2025.109143",
+    "url": "https://doi.org/10.1016/j.compchemeng.2025.109143",
+    "supplementary_material": "MMC S1, spreadsheet containing refiner controls, specific refining energy, fiber properties, and pulp and handsheet properties."
+  },
+  "license": {
+    "identifier": "CC-BY-4.0",
+    "file": "LICENSE.txt",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribution": "permitted with attribution"
+  },
+  "preparation": {
+    "description": "Select the named fiber-property variables Shives through F (llw) as predictors and the named variables CSF through s as responses from the publication supplementary table. Refiner controls, specific refining energy, and the final k variable are not part of the model matrices. Preserve all 46 rows, selected numeric values, column order, and row order. No values are imputed, centered, scaled, rounded, or otherwise transformed."
+  },
+  "integrity": {
+    "resource_sha256": {
+      "X.csv": "b26d1639339c406bf91070e2ad8ceb8df59d3ad1f90ece7c5cd5b18264d63b45",
+      "Y.csv": "b600264d2319efce3500c6d7adbf5490b62e6d42a1e32af7df62709b1975ce93",
+      "LICENSE.txt": "e21d8674cbe4b64a371cd530a0ea8fa4727c1de7005dc707e86b55ea8e6f14d7"
+    },
+    "array_sha256": {
+      "data_float64_c_order": "b3ef856ebc766ce2f34ca97fde8f7595a73f27c03c68904af3cd39a8e95cb486",
+      "target_float64_c_order": "5d404dd4f140a936aa3b0da2c55596093bf1695b0074dc13239ae8a6dd8fa801"
+    }
+  }
+}

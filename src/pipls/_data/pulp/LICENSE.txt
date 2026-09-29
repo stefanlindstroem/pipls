@@ -1,0 +1,26 @@
+Pulp dataset attribution and license notice
+
+The analysis-facing tables in this directory are adapted from supplementary data associated with:
+
+Stefan B. Lindström, Rita Ferritsius, Johan E. Carlson, Johan Persson, and Fritjof Nilsson,
+"Predicting handsheet properties and enhancing refiner control using fiber analyzer data and
+latent variable modeling," Computers & Chemical Engineering 199 (2025), 109143.
+https://doi.org/10.1016/j.compchemeng.2025.109143
+
+The article and its supplementary material are published under the Creative Commons Attribution
+4.0 International license (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Under CC BY 4.0, the material may be shared and adapted for any purpose provided appropriate credit
+is given, a link to the license is supplied, and modifications are indicated.
+
+Changes made for this repository:
+
+- selected 14 named fiber-property variables as predictors for the Pi-PLS example;
+- selected Canadian Standard Freeness and seven named handsheet-property variables as responses;
+- excluded refiner controls, specific refining energy, and the final `k` variable;
+- split the selected columns into comma-delimited `X.csv` and `Y.csv` files;
+- preserved numeric values, column order, and row order;
+- added repository metadata and integrity hashes.
+
+No endorsement by the original authors or publisher is implied.

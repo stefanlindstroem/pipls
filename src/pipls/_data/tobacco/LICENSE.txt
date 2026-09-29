@@ -1,0 +1,36 @@
+Tobacco dataset attribution and license notice
+
+The analysis-facing tables in this directory are adapted from the public dataset:
+
+Hexin Chen, Junwei Guo, Hongbo Wang, and Lijuan Zhao,
+"A Near-Infrared Spectroscopy Dataset for Chemical Composition Prediction and Origin Identification
+of Tobacco Leaves," Mendeley Data, Version 1 (2025).
+https://doi.org/10.17632/9z7dgdtggk.1
+
+Related publication:
+
+Hexin Chen et al., "A dataset for geographical origin identification of tobacco leaves from
+multiple countries using near-infrared spectroscopy and chemometric analysis," Data in Brief 64
+(2026), 112418.
+https://doi.org/10.1016/j.dib.2025.112418
+
+Mendeley Data identifies the dataset license as Creative Commons Attribution 4.0 International
+(CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Under CC BY 4.0, the data may be shared and adapted for any purpose provided appropriate credit is
+given, a link to the license is supplied, and modifications are indicated.
+
+Changes made for this repository:
+
+- matched the public spectra and chemistry tables one-to-one by their shared sample identifier;
+- ordered the matched rows by that identifier;
+- retained all 347 matched samples and all 13 chemical responses;
+- retained the 1,557 raw FT-NIR absorbance columns in source order;
+- removed the identifier, cultivation-year, origin, and duplicate spectrum-index metadata columns
+  from the numeric model matrices;
+- wrote the aligned values as comma-delimited X.csv and Y.csv;
+- added public metadata and integrity hashes.
+
+No imputation, smoothing, derivative, scatter correction, centering, scaling, or other spectral
+preprocessing was applied. No endorsement by the original authors or repository is implied.

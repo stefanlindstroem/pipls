@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use PiPLS, please cite the companion article."
+title: "pipls: Π-PLS multivariate regression for Python"
+type: software
+version: "0.1.0"
+date-released: 2026-09-29
+license: BSD-3-Clause
+repository-code: "https://github.com/stefanlindstroem/pipls"
+url: "https://stefanlindstroem.github.io/pipls/"
+authors:
+  - family-names: Agrawal
+    given-names: Vishal
+  - family-names: Lindström
+    given-names: "Stefan B."
+preferred-citation:
+  type: article
+  title: "Panoramic Partial Least Squares (Π-PLS): A transparent and parsimonious multivariate regression model with paired latent directions"
+  authors:
+    - family-names: Agrawal
+      given-names: Vishal
+    - family-names: Nilsson
+      given-names: Fritjof
+    - family-names: Lindström
+      given-names: "Stefan B."
+  journal: "Computers & Chemical Engineering"
+  year: 2026
+  doi: "10.1016/j.compchemeng.2026.109913"
+  url: "https://doi.org/10.1016/j.compchemeng.2026.109913"

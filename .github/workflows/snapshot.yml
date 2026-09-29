@@ -1,0 +1,25 @@
+name: Snapshot smoke test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python tools/create_snapshot.py /tmp/pipls-snapshot.tar.gz
+      - run: >-
+          ! tar -tzf /tmp/pipls-snapshot.tar.gz |
+          grep -E '(^|/)(\.git|__pycache__|\.pytest_cache|docs/assets/generated)(/|$)|\.pyc$'
+      - run: >-
+          ! tar -tzf /tmp/pipls-snapshot.tar.gz |
+          grep -E '^examples/results/.+[^/]$' |
+          grep -vE '(^|/)\.gitkeep$'
+      - run: |
+          tar -xOf /tmp/pipls-snapshot.tar.gz SNAPSHOT_INFO |
+            grep -Fx 'dirty: false'

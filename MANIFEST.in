@@ -1,0 +1,23 @@
+include CITATION.cff
+include Makefile
+include mkdocs.yml
+include tools/_artifact_support.py
+include tools/check_sdist_docs.py
+include tools/check_distributions.py
+include tools/installed_smoke_test.py
+include tools/create_snapshot.py
+include tools/configure_pages_docs.py
+include tools/render_quick_start_tutorial.py
+include tools/render_synthetic_tutorial.py
+include tools/render_pulp_tutorial.py
+include tools/render_home_pls_comparison.py
+recursive-include tools/figures *.tex
+include constraints/minimum.txt
+recursive-include docs *.md *.js *.mjs *.css
+prune docs/maintainers
+recursive-include docs/assets/figures *.svg
+recursive-include src/pipls/_data/pulp *.csv *.json *.md *.txt
+recursive-include src/pipls/_data/sugarcane *.csv *.json *.md *.txt
+recursive-include src/pipls/_data/tobacco *.csv *.json *.md *.txt
+recursive-include examples *.py *.md
+recursive-include examples/results .gitkeep

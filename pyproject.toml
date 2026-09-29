@@ -1,0 +1,107 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipls"
+version = "0.1.0"
+description = "Π-PLS multivariate regression"
+keywords = ["partial least squares", "PLS", "multivariate regression", "chemometrics"]
+readme = "README.md"
+requires-python = ">=3.10"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [
+  {name = "Vishal Agrawal"},
+  {name = "Stefan B. Lindström"},
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=1.26,<3",
+  "scikit-learn>=1.4,<2",
+  "joblib>=1.2,<2",
+]
+
+[project.urls]
+Homepage = "https://stefanlindstroem.github.io/pipls/"
+Documentation = "https://stefanlindstroem.github.io/pipls/"
+Source = "https://github.com/stefanlindstroem/pipls"
+Issues = "https://github.com/stefanlindstroem/pipls/issues"
+Changelog = "https://github.com/stefanlindstroem/pipls/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "pandas>=2.0",
+  "matplotlib>=3.8",
+  "textalloc>=1.2.4,<2",
+  "PyYAML>=6",
+  "tomli>=2; python_version < '3.11'",
+  "mypy>=1.10",
+  "pytest>=8",
+  "ruff>=0.6",
+]
+examples = ["matplotlib>=3.8", "textalloc>=1.2.4,<2"]
+docs = [
+  "build>=1.2,<2",
+  "matplotlib>=3.8",
+  "textalloc>=1.2.4,<2",
+  "mkdocs>=1.6,<2",
+  "mkdocs-material>=9.5,<9.7",
+  "mkdocstrings-python>=2,<3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pipls = [
+  "_data/pulp/*.csv",
+  "_data/pulp/*.json",
+  "_data/pulp/*.md",
+  "_data/pulp/*.txt",
+  "_data/sugarcane/*.csv",
+  "_data/sugarcane/*.json",
+  "_data/sugarcane/*.md",
+  "_data/sugarcane/*.txt",
+  "_data/tobacco/*.csv",
+  "_data/tobacco/*.json",
+  "_data/tobacco/*.md",
+  "_data/tobacco/*.txt",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+  "error::pipls.exceptions.PredictorRankSupportWarning",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.10"
+packages = ["pipls"]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["joblib", "sklearn", "sklearn.*"]
+ignore_missing_imports = true

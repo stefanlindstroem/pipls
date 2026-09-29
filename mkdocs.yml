@@ -1,0 +1,94 @@
+site_name: Π-PLS
+site_description: Π-PLS multivariate regression for Python
+copyright: Copyright © 2026 Vishal Agrawal and Stefan B. Lindström
+strict: true
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Tutorials:
+      - 1. Quick start with Pulp: tutorials/quick_start.md
+      - 2. Inspect and select with synthetic data: tutorials/synthetic.md
+      - 3. Complete Pulp analysis: tutorials/pulp.md
+  - Examples: examples.md
+  - Scientific background:
+      - Theory: theory.md
+  - Reference:
+      - Overview: api/index.md
+      - PiPLSRegression: api/regression.md
+      - PiPLSSearchCV: api/path.md
+      - Path and selection: path_selection.md
+      - OOF diagnostics: oof_diagnostics.md
+      - Model inspection: model_inspection.md
+      - Datasets and generators: api/datasets.md
+      - Reference datasets: datasets.md
+      - Troubleshooting: troubleshooting.md
+  - Project:
+      - Reproducibility: reproducibility.md
+      - Compatibility: compatibility.md
+      - Authors, license, and citation: citation.md
+
+exclude_docs: |
+  decisions/**
+  maintainers/**
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
+          options:
+            docstring_style: numpy
+            members_order: source
+            merge_init_into_class: true
+            separate_signature: true
+            show_object_full_path: false
+            show_root_full_path: false
+            show_root_heading: true
+            show_signature_annotations: true
+            show_source: false
+            signature_crossrefs: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.snippets:
+      base_path:
+        - .
+      check_paths: true
+      dedent_subsections: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/mermaid.mjs
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
